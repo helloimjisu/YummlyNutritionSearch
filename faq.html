@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Yummly Nutrition Search</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Tinos:400italic' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/main.css">
+
+  </head>
+
+  <body ng-app="nutritionApp" ng-controller="ListController">
+
+
+<!-- start top image -->
+  <div class="faqtopimage">
+
+<!-- top nav -->
+  <div class="navbar">
+  <header>
+        <div class="logo">
+          <a href="index.html"><img src="img/Yummly_logo.png"></a>
+
+          <h1 id="logodes">Nutrition Search</h1>
+        </div>
+      <nav>
+        
+        <ul class="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li> 
+          <li><a class="active" href="faq.html">Nutrition FAQs</a></li>  
+        </ul>
+      </nav>
+
+    </div> <!-- end of top nav -->
+
+
+
+  </header>
+
+    <main>
+      <div class="faqcontainer">
+
+        <ul class="faq">
+
+          <li><h3>What are my daily nutrient requirements?</h3>
+
+          <div class="answer">
+              <p>You can view your personal daily requirements for macronutrients, vitamins, and minerals with this <a id="interactiveDRI" href="http://fnic.nal.usda.gov/fnic/interactiveDRI/" target="_blank">tool</a>, which is used by health professionals. Simply fill in your information and your daily nutrient needs will be calculated. Then you can use this information to search for recipes more suited to your individual nutrient needs.</p>
+              
+          </div>
+
+          </li>
+
+          <li>
+            <h3>There are so many confusing claims about nutrition in the media and I don't know which are reliable. Where can I find evidence to back up these claims?</h3>
+
+            <div class="answer">
+              <p>The <a id="NEL" href="http://www.nel.gov/category.cfm?cid=44" target="_blank">Nutrition Evidence Library</a> is a great resource to find summaries of scientific evidence (based on peer reviewed scientific articles) for various nutrition topics, ranging from food/dietary patterns, body weight, nutrients, and more. It will even give you a description of how strong the evidence supports this summary (if there is a limited amount of evidence, moderate amount, etc).</p>
+
+              <p>For example, <a id="NELexample" href="http://www.nel.gov/topic.cfm?cat=3302" target="_blank">how effective are high protein low carb diets for weight loss?</a></p>
+
+              <p>Answer summary from the Nutrition Evidence Library: A moderate amount of evidence demonstrates that intake of dietary patterns with less than 45% calories from carbohydrate or more than 35% calories from protein are not more effective than other diets for weight loss or weight maintenance, are difficult to maintain over the long term, and may be less safe. (Grade of Summary/Amount of Evidence: Moderate) </p>
+            </div>
+          </li>
+
+          <li>
+            <h3>I heard that the Food Guide Pyramid has been replaced. Is that true?</h3>
+
+            <div class="answer">
+              <p>Yes, this is true. The new food icon, MyPlate, was released in 2011 with the intent to help consumers visualize what a healthy meal consists of more easily. Check out <a id="chooseMyPlate" href="http://www.choosemyplate.gov/" target="_blank">ChooseMyPlate.gov</a> for more information!</p>
+
+              <img src="img/choosemyplate.jpg" alt="">
+            </div>
+
+          </li>
+
+          <li>
+            <h3>Which diet is the best way to lose weight?</h3>
+
+             <div class="answer">
+
+              <p>Even though no one likes this answer, there is no one fad diet that will help you magically shed off all of the weight at once AND keep it off. The best way to lose weight is to implement a gradual lifestyle change of including more regular exercise, eating fewer calories than you normally take in (but not dramatically fewer), and eating a moderate amount of all food groups (and not cutting out the foods you like altogether). The key is to make the weight loss maintainable and making it a lifestyle and not a sprint that ends in a few weeks, only to gain all the weight back at the end of the sprint and you back to your normal lifestyle. </p>
+<!-- 
+                Body weight is ultimately a result of energy balance, which means the difference between the energy you intake and the energy you spend each day. You will lose weight if you spend more calories than you eat, and gain weight if you eat more than you spend (or maintain weight if you eat the same amount as you spend).</p> -->
+
+              <p>There are many fad diets out there that demand an extremely low calorie count or cut out entire necessary food groups. While you may see dramatic weight loss initially, the weight loss is usually not maintainable over a long period of time (especially if it is so drastic) and cutting out entire food groups can lead to nutrient deficiencies and illness. </p>
+
+            </div>
+          </li>
+
+          <li>
+            <h3>How do I find the current Dietary Guidelines for Americans?</h3>
+
+             <div class="answer">
+              <p>The current edition is Dietary Guidelines for Americans 2010 and it can be found <a id="DGA" href="http://www.cnpp.usda.gov/sites/default/files/dietary_guidelines_for_americans/PolicyDoc.pdf" target="_blank">here</a>.</p>
+              </div>
+          </li>
+        
+          <li>
+            <h3>I would like to get advice about my eating habits. Who should I talk to?</h3>
+
+
+             <div class="answer">
+              <p>Talk to a Registered Dietitian (RD). They are food and nutrition experts who have met the educational criteria and bassed a national examination to earn the credential and to be able to practice clinically. Being a medical doctor does not always qualify one to give nutrition advice as most medical schools don't require students to take more than one basic nutrition course, and there is no criteria to become a "nutritionist" (this is usually a self-proclaimed title). </p>
+
+              <p>As for online resources, stick with government or accredited resources that base advice on peer-reviewed science.</p>
+            </div>
+          <li>
+
+        </ul>
+
+      </div>
+
+    </main>
+
+  </div> <!-- end of top image -->
+
+
+
+  <footer>
+    <div class="footer clearfix">
+    <p id="copyright">&copy; 2015 Yummly Nutrition Search </p>
+
+    </div>
+  </footer>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
+

@@ -1,0 +1,1005 @@
+//font colors//
+
+$lightfontcolor: #fff;
+$darkfontcolor: #000;
+
+//font family//
+
+$bodyfont: 'Lato', sans-serif;
+$subfont: 'Tinos', serif;
+
+//background colors//
+
+$lightbgcolor: #fff;
+$darkbgcolor: #f7f7f7;
+$appbgcolor: #573437;
+
+//other colors//
+$buttonhover: #FCAB40;
+$formblur: #C5CAE9;
+$formfocus: #FCAB40;
+$advancedoptions: #6E463C;
+
+
+//button styles//
+@mixin button {
+	display: inline-block;
+	padding: 15px 30px;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	border: white solid 1px;
+	color: #fff;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+// index.html
+
+.logo {
+	margin-top: 20px;
+	display: inline-block;
+	img{
+		float: left;
+	}
+
+}
+
+#logodes {
+	display: inline-block;
+	padding-top: 20px;
+	color: $lightfontcolor;
+	font-weight: 700;
+	font-size: 1.5em;
+
+}
+
+
+.app{
+	background-color: $appbgcolor;
+}
+
+.apptopimage {
+	background: url(../img/salad.jpg) center center no-repeat fixed;
+	height: 700px;
+}
+
+.appcontainer {
+	height: 500px;
+	width: 70%;
+	margin: 50px auto;
+	background: rgba(0,0,0,0.5);
+		h1{
+			font-size: 3em;
+		}
+}
+
+.advancedOptions {
+	margin: 20px auto;
+		h2{
+			font-size: 2em;
+			font-family: $subfont;
+			font-style: italic;
+		}
+
+}
+
+#helptext {
+	font-size: 0.7em;
+	text-transform: none;
+	font-style: italic;
+	padding-bottom: 10px;
+		a{
+			color: $lightfontcolor;
+		}
+}
+
+
+#advancedOptionsButton {
+	@include button;
+}
+
+#advancedOptionsButton:hover {
+  background: $buttonhover; 
+}
+
+
+#searchRecipesButton {
+	@include button;
+}
+
+#searchRecipesButton:hover {
+  background: $buttonhover; 
+}
+
+
+.searchModalDialog {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 99999;
+  opacity: 0;
+  -webkit-transition: opacity 400ms ease-in;
+  -moz-transition: opacity 400ms ease-in;
+  transition: opacity 400ms ease-in;
+  pointer-events: none; }
+
+.searchModalDialog:target {
+  opacity: 1;
+  pointer-events: auto; }
+
+.searchModalDialog > div {
+  width: 70%;
+  position: relative;
+  margin: 5% auto;
+  padding: 5px 20px 13px 20px;
+  border-radius: 0;
+  background: rgba(87, 52, 55, 1);
+  height: 80%;
+}
+
+.close {
+@include button;
+position: fixed;
+}
+
+.close:hover {
+  background: $buttonhover; 
+}
+
+.closemodalsection {
+	float: left;
+	width: 80%;
+	height: 100px;
+	margin-top: 50px;
+}
+
+
+.options {
+	float: left;
+	height: 200px;
+	width: 50%;
+	margin-top: 20px;
+}
+
+
+#includetitle{
+	font-size: 1.5em;
+	font-weight: 700;
+	color: $buttonhover;
+}
+
+#includedes{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-family: $subfont;
+	text-transform: none;
+	font-style: italic;
+	
+}
+
+#includehelp{
+	display: inline-block;
+	padding-top: 3px;
+}
+
+#limittitle{
+	font-size: 1.5em;
+	font-weight: 700;
+	color: $buttonhover;
+
+}
+
+#limitdes{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	font-family: $subfont;
+	text-transform: none;
+	font-style: italic;
+
+}
+
+.reciperesults {
+	display: none;
+	width: 70%;
+	margin: 50px auto;
+	background: rgba(0,0,0,0.5);
+
+	h2{
+	padding-top: 20px;
+	padding-left: 30px;
+	padding-bottom: 60px;
+	color: $lightfontcolor;
+	font-size: 1.8em;
+	}
+
+	p{
+		color: $lightfontcolor;
+		font-size: 1em;
+	}
+
+	td{
+		border: 1px solid #574B4E;
+	}
+
+}
+
+.searchTermStatement{
+	padding-top: 20px;
+	padding-left: 30px;
+	color: $lightfontcolor;
+	font-size: 1.5em;
+	font-family: $subfont;
+	font-style: italic;
+}
+
+
+#getRecipeButton{
+	@include button;
+	margin-left: 20px;
+	margin-right: 20px;
+	text-align: center;
+}
+
+#getRecipeButton:hover {
+  background: $buttonhover; 
+}
+
+input[id*="query"]{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid $formblur;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 50%;
+  font-size: 3rem;
+  color: #C5CAE9;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  transition: all .3s; 
+
+}
+
+
+input[id*="query"]:focus:not([readonly]) {
+    border-bottom: 1px solid $formfocus;
+    box-shadow: 0 1px 0 0 $formfocus; 
+}
+
+input[class*="advancedOptions"]{
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px dotted $formblur;
+  border-radius: 0;
+  outline: none;
+  height: 2rem;
+  width: 3.2rem;
+  font-size: 1.5rem;
+  color: #C5CAE9;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  transition: all .3s; 
+
+}
+
+
+input[class*="advancedOptions"]:focus:not([readonly]) {
+    border-bottom: 1px dotted $formfocus;
+    box-shadow: 0 1px 0 0 $formfocus; 
+}
+
+
+
+
+
+// about.html
+
+
+
+.clearfix:after{
+	display: table;
+	content: '';
+	clear: both;
+}
+
+
+body {
+	font-family: $bodyfont;
+
+}
+
+nav {
+	color: $lightfontcolor;
+}
+
+main {
+	color: $lightfontcolor;
+}
+
+
+.topimage {
+	background: url(../img/hero_image.jpg) center center no-repeat fixed;
+	height: 600px;
+}
+
+header {
+	margin-left: auto;
+	margin-right: auto;
+	height: 70px;
+	width: 70%;
+}
+
+.logo {
+	float: left;
+}
+
+nav {
+	float: right;
+	height: 110px;
+}
+
+.menu li {
+		display: inline-block;
+		padding-top: 50px;
+		padding-left: 30px;
+		text-transform: uppercase;
+
+	a{
+		text-decoration: none;
+		color: $lightfontcolor;
+	}
+}
+
+.menu a:hover{
+	border-bottom: 1px solid $lightfontcolor;
+}
+
+a.active{
+	border-bottom: 1px solid $lightfontcolor;
+}
+
+main{
+	text-align: center;
+	h1 {
+		padding-top: 150px;
+		font: {
+			family: $subfont;
+			style: italic;
+			size: 1.2em;
+			}
+	}
+
+	span {
+		font: {
+			size: 5em;
+			weight: 700;
+		}
+		text-transform: uppercase;
+	}
+
+	p {
+		text-transform: uppercase;
+	}
+}
+
+
+.features {
+	width: 70%;
+	margin-left: auto;
+	margin-right: auto;
+
+	li {
+		display: inline-block;
+		width: 25%;
+		margin-left: 5%;
+		padding-top: 50px;
+		padding-bottom: 50px;
+		text-align: center;
+	}
+
+	img{
+		display: block;
+		margin: auto;
+	}
+	p {
+		display: inline-block;
+		padding-top: 15px;
+	}
+
+	.title {
+	font-weight: 700;
+	text-transform: uppercase;
+	padding-top: 10px;
+	}
+
+}
+
+
+.mobileappsection {
+	background: url(../img/iphone_bg.jpg) center center no-repeat;
+	height: 500px;
+	background-color: $darkbgcolor;
+}
+.mobileapp {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#mobileappiphone {
+	float: left;
+
+}
+
+.mobileappdes {
+	float: right;
+	margin: 150px 100px;
+	width: 500px;
+
+	h1 {
+	font-weight: 700;
+	text-transform: uppercase;
+	}
+
+	p {
+	display: inline-block;
+	padding-top: 15px;
+	}
+
+	img{
+	margin: 15px 3px;
+	}
+}
+
+
+.testimonialsection {
+
+	background: url(../img/purplesection.jpg) center center no-repeat;
+	height: 350px;
+}
+
+.testimonial {
+	width: 40%;
+	margin-left: auto;
+	margin-right: auto;
+	color: $lightfontcolor;
+	text-align: center;
+	font: {
+		weight: 100;
+		size: 1.3em;
+	}
+
+	h1 {
+	padding-top: 150px;
+	}
+
+	p {
+	padding-top: 10px;
+	font-size: 12px;
+	}
+
+}
+
+.cuisines {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	width: 100%;
+
+	h1{
+	display: inline-block;
+	padding: 30px;
+	}
+
+	img{
+		display: block;
+		width: 100%;
+	}
+
+	figure {
+		width: 20%;
+	    height: auto;
+	    max-width: 100%;
+	    display: inline-block;
+		float: left;
+		position: relative;
+	}
+
+	figcaption {
+		position: absolute;
+		width: 100%;
+		top: 30%;
+	    text-align: center;
+	    color: $lightfontcolor;
+	    p{
+	    	font-family: $subfont;
+	    	font-style: italic;
+	    }
+	    h2{
+	   		font-weight: 700;
+	   		text-transform: uppercase;
+	   		font-size: 1.8em;
+    	}
+	}
+}
+
+
+.stats {
+	width: 70%;
+	height: 130px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
+	li {
+	display: inline-block;
+	padding: 20px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	}
+
+	h1 {
+	font: {
+		weight: 700;
+		size: 2em;
+		}
+	text-transform: uppercase;
+	}
+
+	p{
+	display: inline-block;
+	padding-top: 5px;
+	}
+}
+
+
+footer{
+	background-color: $darkbgcolor;
+}
+
+.footer {
+	width: 70%;
+	height: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: $darkbgcolor;
+
+	p {
+	display: inline-block;
+	padding-top: 30px;
+	}
+}
+
+
+#copyright {
+	float: left;
+}
+
+#design {
+	float: right;
+}
+
+
+
+
+// faq.html
+
+.faqtopimage {
+	background: url(../img/peas.jpeg) center center no-repeat fixed;
+	height: 100%;
+}
+
+.faqcontainer {
+	width: 70%;
+	height: 100%;
+	margin: 50px auto;
+	background: rgba(0,0,0,0.5);
+		h3{
+			padding: 20px;
+			font-size: 1.5em;
+			font-family: $subfont;
+			background: rgba(0,0,0,0.5);
+
+		}
+}
+
+
+.answer{
+	display: none;
+	width: 100%;
+		p{
+			padding: 20px;
+			font-size: 1em;
+			font-family: $bodyfont;
+			text-transform: none;
+
+		}
+		a{
+			color: $buttonhover;
+		}
+}
+
+
+
+//responsive
+
+@media screen and (max-width: 1190px){
+
+	.stats {
+		width: 100%;
+		height: 100%;
+	
+		h1 {
+		font: {
+			weight: 700;
+			size: 1.5em;
+			}
+		}
+
+	}
+
+}
+
+@media screen and (max-width: 1185px){
+	.appcontainer {
+		width: 85%;
+	}
+
+	header {
+	margin-left: auto;
+	margin-right: auto;
+	height: 70px;
+	width: 85%;
+	}
+
+	.mobileappdes {
+	float: right;
+	margin: 10% 20px 10% 40%;
+	width: 50%;
+
+	h1 {
+	font-weight: 700;
+	text-transform: uppercase;
+	}
+
+	p {
+	display: inline-block;
+	padding-top: 15px;
+	}
+
+	img{
+	margin: 15px 3px;
+	}
+	}
+
+}
+
+
+@media screen and (max-width: 1075px){
+	.appcontainer {
+		width: 85%;
+	}
+
+	header {
+	margin-left: auto;
+	margin-right: auto;
+	height: 70px;
+	width: 85%;
+	}
+
+}
+
+
+@media screen and (max-width: 1045px){
+
+	.features {
+			width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+
+			li {
+				display: inline-block;
+				width: 30%;
+				margin-left: 2%;
+				padding-top: 50px;
+				padding-bottom: 50px;
+				text-align: center;
+			}
+
+	}
+
+	.footer {
+		width: 90%;
+
+	}
+
+}
+
+@media screen and (max-width: 990px){
+
+	.cuisines {
+		figcaption {
+		    h2{
+		   		font-size: 1.2em;
+	    	}
+	
+		}
+	}
+
+	.faqcontainer {
+	width: 80%;
+	}
+}
+
+@media screen and (max-width: 827px){
+
+	nav{
+		float: left;
+		width: 100%;
+		margin: 20px 20%;
+	}
+
+	.testimonial {
+
+	h1 {
+	padding-top: 45%;
+	}
+
+
+	}
+
+}
+
+
+@media screen and (max-width: 805px){
+
+	.stats {
+	
+		h1 {
+		font: {
+			size: 1em;
+			}
+		}
+
+		li {
+		display: inline-block;
+		padding: 10px;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		}
+
+	}
+
+}
+
+
+
+@media screen and (max-width: 786px){
+	.options {
+		float: left;
+		height: 200px;
+		width: 45%;
+		margin-top: 20px;
+		}
+
+	.searchModalDialog > div {
+	  width: 90%;
+	  position: relative;
+	  margin: 5% auto;
+	  padding: 5px 20px 13px 20px;
+	  border-radius: 0;
+	  background: rgba(87, 52, 55, 1);
+	  height: 95%;
+	}
+
+	.closemodalsection {
+	height: 100px;
+	margin-top: 100px;
+	}
+
+}
+
+
+
+@media screen and (max-width: 732px){
+	.appcontainer {
+		h1{
+		font-size: 3em;
+		padding: 30px;
+		}
+	}
+
+
+	input[id*="query"]{
+	  width: 70%;
+	}
+
+	nav{
+		margin: 20px 13%;
+	}
+
+}
+
+@media screen and (max-width: 720px){
+
+	.cuisines {
+
+		figure {
+			width: 50%;
+		}
+
+		figcaption {
+		    h2{
+		   		font-size: 2.2em;
+	    	}
+		}
+	}
+}
+
+
+@media screen and (max-width: 700px){
+
+	.stats {
+
+		li {
+		width: 100%;
+		}
+
+		h1 {
+		font: {
+			weight: 700;
+			size: 2em;
+			}
+		}
+
+	}
+
+}
+
+@media screen and (max-width: 637px){
+	.closemodalsection {
+	height: 120px;
+	width: 60%;
+	margin-top: 100px;
+	}
+
+		.menu{
+		width: 100%;
+		}
+		.menu li{
+		padding: 0px;
+		margin-top: 50px;
+		margin-right: 15px;
+	}
+
+}
+
+@media screen and (max-width: 550px){
+
+	.features {
+
+			li {
+				display: block;
+				width: 70%;
+				margin: 0 15%;
+			}
+
+	}
+
+	.mobileappdes {
+
+		img{
+		margin: 10px 3px 1px 3px;
+		}
+	}
+
+	.mobileappsection {
+		height: 580px;
+	}
+
+	.cuisines {
+
+		figcaption {
+		    h2{
+		   		font-size: 2em;
+	    	}
+		}
+	}
+}
+
+
+
+@media screen and (max-width: 527px){
+		#advancedOptionsButton {
+			display: block;
+			width: 50%;
+			margin: 30px auto 5px auto;
+		}
+
+		#searchRecipesButton {
+			display: block;
+			width: 50%;
+			margin: 10px auto;
+
+		}
+
+	}
+
+
+@media screen and (max-width: 522px){
+		.logo {
+			margin-top: 20px;
+			display: inline-block;
+			img{
+				float: left;
+			}
+
+		}
+
+		#logodes {
+			display: inline-block;
+			color: $lightfontcolor;
+			font-weight: 700;
+			font-size: 1em;
+
+		}
+	}
+
+@media screen and (max-width: 450px){
+
+	.faqcontainer {
+		width: 100%;
+	}
+
+	.appcontainer {
+		width: 100%;
+		h1{
+		font-size: 3em;
+		padding: 30px;
+		}
+}
+
+
+	.cuisines {
+
+		figcaption {
+		    h2{
+		   		font-size: 1.8em;
+	    	}
+		}
+	}
+
+
+}
+
+
+@media screen and (max-width: 400px){
+
+	.cuisines {
+
+		figcaption {
+		    h2{
+		   		font-size: 1.5em;
+	    	}
+		}
+	}
+
+	.advancedOptions {
+		h2{
+			font-size: 1.5em;
+		}
+
+}
+
+}
